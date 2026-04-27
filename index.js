@@ -11,9 +11,6 @@ import hardSkillsRouter from "./routes/hardSkillsRouter.js";
 import proyectosRouter from "./routes/proyectosRouter.js";
 dotenv.config();
 const app = express();
-app.listen(process.env.PORT, () => {
-  console.log("server running on port " + process.env.PORT);
-});
 
 app.use(cors());
 app.use(express.json());
@@ -29,3 +26,7 @@ app.use("/api", actDocenteRouter);
 app.use("/api", congresosRouter);
 app.use("/api", hardSkillsRouter);
 app.use("/api", proyectosRouter);
+
+app.listen(process.env.PORT, () => {
+  console.log("server running on port " + process.env.PORT);
+});
