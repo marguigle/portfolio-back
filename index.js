@@ -12,11 +12,15 @@ import proyectosRouter from "./routes/proyectosRouter.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+// Enable CORS for all origins - required for frontend access
+app.use(cors({
+  origin: "*",
+  credentials: false
+}));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("bienvenido a mi servidor");
+  res.json({ message: "bienvenido a mi servidor", status: "ok" });
 });
 
 app.use("/api", personaRouter);
