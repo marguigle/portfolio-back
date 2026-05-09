@@ -9,6 +9,7 @@ import actDocenteRouter from "./routes/actDocenteRouter.js";
 import congresosRouter from "./routes/congresosRouter.js";
 import hardSkillsRouter from "./routes/hardSkillsRouter.js";
 import proyectosRouter from "./routes/proyectosRouter.js";
+import cursosRouter from "./routes/cursosRouter.js";
 import authRouter from "./routes/authRouter.js";
 import uploadRouter from "./routes/uploadRouter.js";
 dotenv.config();
@@ -32,6 +33,7 @@ app.use("/api", actDocenteRouter);
 app.use("/api", congresosRouter);
 app.use("/api", hardSkillsRouter);
 app.use("/api", proyectosRouter);
+app.use("/api", cursosRouter);
 app.use("/api/auth", authRouter);
 app.use("/api/upload", uploadRouter);
 
