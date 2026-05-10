@@ -1,6 +1,7 @@
 import {Schema,model} from "mongoose";
 
 const personaSchema = Schema( {
+rol:{type:String, enum:["medico","desarrollador"], default:"medico"},
 nombres:{type:String,required:true},
 apellidos:{type:String,required:true},
 fechaNacimiento:{String},

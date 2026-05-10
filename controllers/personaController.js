@@ -6,14 +6,16 @@
         let  personas
         let success
         let error
+        const { rol } = req.query
 
         try {
-        personas = await PersonaModel.find()
+        const filter = rol ? { rol } : {}
+        personas = await PersonaModel.find(filter)
         res.json(
             {response:personas,
              success:true,
              error:null,
-           
+          
           })
         } catch (error) {
             res.error({message:"no se ha podido encontrar la persona buscada"})
